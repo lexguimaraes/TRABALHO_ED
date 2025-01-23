@@ -20,19 +20,19 @@ int main(void) {  //CRISTO REDENTOR, COPACABANA PALACE, MARACANA, FLORESTA DA TI
         printf("1 - Retorno do imovel a venda mais barato (e caro)\n"); //FEITO
         printf("2 - Retorno do imovel alugado mais barato (e caro)\n"); //FEITO
         printf("3 - Buscar imoveis por (bairro, rua, CEP, latitude, longitude, tipo)\n"); //FEITO
-        printf("4 - Retirar imoveis por (bairro, rua, CEP, latitude, longitude, tipo)\n"); //to-do!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        printf("4 - Retirar imoveis por (bairro, rua, CEP, latitude, longitude, tipo)\n"); //FEITO
         printf("5 - Dada a descricao, obter informacoes a mais do imovel\n"); //FEITO
-        printf("6 - Retorno ou retirada de imoveis de uma dada metragem\n"); //to-do!!!!!!!!!!!!!!!!!!!
+        printf("6 - Retorno ou retirada de imoveis de uma dada metragem\n"); //FEITO
         printf("7 - Inserir imovel\n"); //FEITO
         printf("8 - Alterar imovel \n"); //FEITO
-        printf("9 - Retirada ou Retorno de todos os imoveis de uma determinada faixa de preco\n"); //to-do!!!!!!!!!!!!!!!!!!!!
+        printf("9 - Retirada ou Retorno de todos os imoveis de uma determinada faixa de preco\n"); //FEITO
         printf("10 - Buscar imovel por ID\n"); //FEITO
-        printf("11 - Remover imovel por ID\n"); //to-do!!!!!!!!!!!!
+        printf("11 - Remover imovel por ID\n"); //FEITO
         printf("12 - Imprimir arvore\n"); //FEITO
         printf("13 - Imprimir a primeira folha da arvore\n"); //FEITO
         printf("14 (EXTRA) - Buscar imoveis proximos de um ponto turístico\n"); //FEITO
-        printf("15 (EXTRA) - Abrir imóvel no Google Maps\n");
-        printf("0 - Sair\n");
+        printf("15 (EXTRA) - Abrir imóvel no Google Maps\n"); //FEITO
+        printf("0 - Sair\n"); //FEITO
         printf("-----------------------------------\n");
         scanf("%d", &comando);
         

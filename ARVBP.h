@@ -45,8 +45,6 @@ void del_dados(void);
 
 TARVBP* cat2a(int t);
 
-
-//funcoes auxiliares para a remocao
 void TARVBP_imprime_imovel_primeira_folha(TARVBP* a, int t);
 
 TARVBP* remover(TARVBP* a, unsigned long int id, int t);

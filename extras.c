@@ -380,20 +380,17 @@ int comp_desc(TIM* IM, char* desc){
 }
 
 double prox_de_aux(double distanciaMax, double lat1, double long1, double lat2, double long2){
-    // Raio da Terra em km
+    //raio da Terra
     const double R = 6371.0;
 
-    // Converte as coordenadas para radiano
     double lat1_rad = lat1 * M_PI / 180.0;
     double lon1_rad = long1 * M_PI / 180.0;
     double lat2_rad = lat2 * M_PI / 180.0;
     double lon2_rad = long2 * M_PI / 180.0;
 
-    // deltaLat e deltaLong
     double dlat = lat2_rad - lat1_rad;
     double dlon = lon2_rad - lon1_rad;
 
-    // Calcula a fórmula de Haversine.
     double a = pow(sin(dlat/2), 2) + cos(lat1_rad) * cos(lat2_rad) * pow(sin(dlon/2), 2);
     double c = 2 * atan2(sqrt(a), sqrt(1-a));
 
@@ -446,5 +443,4 @@ void abrir_google_maps(TARVBP* a, int t, unsigned long int id){
     char* longitude = substituir_virgula_por_ponto(aux->reg[0]->longitude);
 
     printf("https://www.google.com/maps/@%s,%s,15z", latitude, longitude);
-    // O url do google maps precisa ter o . ao invés da vírgula então a gente faz essa troca.
 }

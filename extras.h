@@ -50,22 +50,18 @@ TARVBP* edita_bairro(TARVBP* a, int t,unsigned long int id, char* str); //FEITA;
 
 TARVBP* edita_cep(TARVBP* a, int t,unsigned long int id, char* str); //FEITA;
 
-
-
-
-
 TARVBP* edita_preco_porM2(TARVBP* a, int t, unsigned long int id, float novo_preco_porM2); //FEITA
 
 TARVBP* edita_preco_total(TARVBP* a, int t, unsigned long int id, float novo_preco_total); //FEITA
 
 TARVBP* edita_descricao(TARVBP* a, int t,unsigned long int id, char* str); //FEITA
 
-double prox_de_aux(double distanciaMax, double lat1, double long1, double lat2, double long2);
+double prox_de_aux(double distanciaMax, double lat1, double long1, double lat2, double long2); //FEITA
 
-double prox_de(double distanciaMax, TIM* imovel, double latitude, double longitude);
+double prox_de(double distanciaMax, TIM* imovel, double latitude, double longitude); //FEITA
 
-TLSETIM* imoveis_prox_de(TARVBP* a, int t, double distanciaMax, double latitude, double longitude);
+TLSETIM* imoveis_prox_de(TARVBP* a, int t, double distanciaMax, double latitude, double longitude); //FEITA
 
-char* substituir_virgula_por_ponto(char *str);
+char* substituir_virgula_por_ponto(char *str); //FEITA
 
-void abrir_google_maps(TARVBP* a, int t, unsigned long int id);
+void abrir_google_maps(TARVBP* a, int t, unsigned long int id); //FEITA

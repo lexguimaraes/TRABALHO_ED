@@ -5,7 +5,6 @@
 #include <ctype.h>
 #include "DESC.h"
 
-// Tabela de conversão de números por extenso
 static const struct {
     const char *palavra;
     int valor;
@@ -20,16 +19,15 @@ static const struct {
     {"quinze", 15}, {"vinte", 20}, {"trinta", 30}
 };
 
-// Função para normalizar strings
+
 void normalizar_string(char *str) {
     const char *com_acento = "ÁÀÃÂáàãâÉÊéêÍíÓÔÕóôõÚÜúüÇç";
     const char *sem_acento = "AAAAaaaaEEeeIiOOOoooUUuUcC";
     
     for(int i = 0; str[i]; i++) {
-        // Converter para minúsculo
+
         str[i] = tolower(str[i]);
-        
-        // Remover acentos
+
         for(int j = 0; com_acento[j]; j++) {
             if(str[i] == com_acento[j]) {
                 str[i] = sem_acento[j];
@@ -39,7 +37,7 @@ void normalizar_string(char *str) {
     }
 }
 
-// Função para converter palavras em números
+
 int palavra_para_numero(const char *palavra) {
     for(size_t i = 0; i < sizeof(NUMEROS)/sizeof(NUMEROS[0]); i++) {
         if(strcmp(palavra, NUMEROS[i].palavra) == 0) {
@@ -59,7 +57,7 @@ DadosImovel extrair_dados(const char *descricao) {
     buffer[sizeof(buffer) - 1] = '\0';
     normalizar_string(buffer);
 
-    // Verificação de padrões (aluguel, financiamento, etc.)
+
     dados.venda = strstr(buffer, "venda") || (strstr(buffer,"vende") || (strstr(buffer,"vendo")));
     dados.aluguel = strstr(buffer, "aluguel") || strstr(buffer, "locacao");
     dados.financiamento = strstr(buffer, "financiamento");
@@ -83,20 +81,20 @@ DadosImovel extrair_dados(const char *descricao) {
     dados.praia_c = strstr(buffer, "praia de copacabana") || strstr(buffer,"praia copacabana");
     dados.cristo = strstr(buffer, "cristo") || strstr(buffer, "corcovado");
 
-    // Tokenização com delimitadores estendidos
+
     token = strtok_r(buffer, " ,.-;()\t\n", &next);
     while (token != NULL) {
-        // Tentar converter para número (palavra ou numeral)
+
         int valor = palavra_para_numero(token);
         if (valor == -1) {
             num = strtol(token, &resto, 10);
-            if (resto != token) { // Conversão bem-sucedida para número
+            if (resto != token) {
                 valor = (int)num;
             }
         }
 
 
-        // Verificar contexto no próprio token
+
         if (valor > 0) {
             if (strstr(token, "quarto") || strstr(token, "quartos")) {
                 dados.quartos = valor;
@@ -112,7 +110,7 @@ DadosImovel extrair_dados(const char *descricao) {
                 dados.suites = valor;
             }
             else {
-                    // Verificar no próximo token
+
                     char *proximo = strtok_r(NULL, " ,.-;()\t\n", &next);
                     if (proximo) {
                         if (strstr(proximo, "quarto") || strstr(proximo, "quartos")) {
@@ -133,7 +131,7 @@ DadosImovel extrair_dados(const char *descricao) {
                 }
 
         } else {
-            // Verificar formato como 190m2
+
             char *ptr = token;
             num = strtol(ptr, &resto, 10);
             if (resto != ptr && strstr(resto, "m2")) {
@@ -154,7 +152,6 @@ void imprimir_info_imovel(TARVBP *arvore, unsigned long int id, int t) {
         return;
     }
 
-    // Primeiro vamos buscar o imóvel diretamente usando buscaImovel_id
     TIM* imovel = buscaImovel_id(arvore, id, t);
     if (imovel == NULL) {
         printf("Imóvel com ID %lu não encontrado.\n", id);
@@ -172,15 +169,15 @@ void imprimir_info_imovel(TARVBP *arvore, unsigned long int id, int t) {
     if (dados.elevador) printf (" - Possui elevador\n");
     if (dados.portaria && !dados.portaria24h) printf(" - Possui portaria\n");
     if (dados.portaria24h) printf( " - Possui portaria 24h\n");
-    if (dados.escola) printf(" - Perto de escolas");
-    if (dados.lagoa) printf(" - Perto da Lagoa Rodrigo de Freitas");
-    if (dados.praia_b) printf(" - Perto da Praia de Botafogo");
-    if (dados.praia_i) printf(" - Perto da Praia de Ipanema");
-    if (dados.praia_c) printf(" - Perto da Praia de Copacabana");
+    if (dados.escola) printf(" - Perto de escolas\n");
+    if (dados.lagoa) printf(" - Perto da Lagoa Rodrigo de Freitas\n");
+    if (dados.praia_b) printf(" - Perto da Praia de Botafogo\n");
+    if (dados.praia_i) printf(" - Perto da Praia de Ipanema\n");
+    if (dados.praia_c) printf(" - Perto da Praia de Copacabana\n");
     if (dados.pao_de_acucar) printf (" - Possui linda vista para o Pão de Açucar\n");
-    if (dados.cristo) printf(" - Possui bela vista para o Cristo Redentor");
-    if (dados.arborizadas) printf( " - Ruas arborizadas");
-    if (dados.shopping) printf(" - Perto do shopping");
+    if (dados.cristo) printf(" - Possui bela vista para o Cristo Redentor\n");
+    if (dados.arborizadas) printf( " - Ruas arborizadas\n");
+    if (dados.shopping) printf(" - Perto do shopping\n");
     if (dados.metro_perto) printf(" - Fica perto do(s) metro(s) de %s\n",imovel->bairro);
     if (dados.piscina) printf(" - Possui piscina\n");
     if (dados.quadra) printf( " - Possui quadra poliesportiva\n");

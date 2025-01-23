@@ -151,30 +151,3 @@ TIM* copia_imovel(TIM* imovel){
     strcpy(new->descricao,imovel->descricao);
     return new;
 }
-
-/*
-int main() {
-    FILE *catalogo = fopen("catalogo.csv", "r");
-    if (!catalogo) exit(1);
-
-    TIM *imovel;
-    char linha[10000];
-    int indice = 1;
-    fgets(linha, sizeof(linha), catalogo);
-
-    while (fgets(linha, sizeof(linha), catalogo) != NULL) {
-        imovel = ler_imovel(linha);
-        if (imovel == NULL) {
-            fprintf(stderr, "Error parsing line %d\n", indice);
-            continue;
-        }
-        printf("%d   %lu\n", indice, imovel->id);
-        indice++;
-        free(imovel);
-    }
-
-
-    fclose(catalogo);
-
-    return 0;
-}*/
