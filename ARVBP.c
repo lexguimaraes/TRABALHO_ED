@@ -286,8 +286,9 @@ TARVBP* TARVBP_busca(TARVBP* a, unsigned long int id, int t){
 
 int TARVBP_tem_id(TARVBP *a, unsigned long int id, int t){
     TARVBP* x = TARVBP_busca(a, id, t);
-    if(x && x!= a){
-        TARVBP_libera(x,t);
+    if(x){
+        if(x!=a)
+            TARVBP_libera(x,t);
         return 1;
     }
     return 0;
@@ -672,7 +673,7 @@ TARVBP* remover(TARVBP* aux, unsigned long int id, int t){
 
 
 TARVBP* TARVBP_retira(TARVBP* a, unsigned long int id, int t) {
-    if(!a || !TARVBP_busca(a, id, t)){
+    if(!a || !TARVBP_tem_id(a, id, t)){
         printf("\nArvore vazia ou id nao encontrado!");
         return a;
     }
