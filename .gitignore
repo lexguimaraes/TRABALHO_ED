@@ -1,0 +1,29 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+
+#cmake-build-debug (é gerado pelo clion e a gente quer padronizar o build)
+/cmake-build-debug/
+#Qualquer config específica de VSCode ou CLion, fica específico para cada um e não interfere no repo
+/.idea/
+/.vscode/
+# Arquivos executáveis
+*.exe
+*.out
+
+# Arquivos objeto
+*.o
+
+# Arquivos de debug
+*.dSYM/
+
+# Arquivos temporários
+*.tmp
+
+# Arquivos binários
+*.bin
