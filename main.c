@@ -307,7 +307,7 @@ int main(void) {  //CRISTO REDENTOR, COPACABANA PALACE, MARACANA, FLORESTA DA TI
             TIM* imovel = (TIM*)malloc(sizeof(TIM));
 
             printf("\nInsira o id do imovel:");
-            scanf("%llu", &id);
+            scanf("%lu", &id);
             imovel->id = id;
             getchar();
 
@@ -370,7 +370,7 @@ int main(void) {  //CRISTO REDENTOR, COPACABANA PALACE, MARACANA, FLORESTA DA TI
             unsigned long int id;
             printf("-----------------------------------\n");
             printf("Informe o id do imovel:\n");
-            scanf("%llu", &id);
+            scanf("%lu", &id);
             TIM* imovel = buscaImovel_id(a, id, t);
 
             if(!imovel) printf("Imovel nao encontrado.\n");
