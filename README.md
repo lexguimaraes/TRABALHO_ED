@@ -30,8 +30,8 @@ Cada registro contém os seguintes campos separados por ponto e vírgula (;):
 
 ### Consultas por Preço
 - [x] Retorno do imóvel a venda mais barato (e caro)
-- [ ] Retorno do imóvel alugado mais barato (e caro)
-- [ ] Retirada de todos os imóveis de uma determinada faixa de preço
+- [x] Retorno do imóvel alugado mais barato (e caro)
+- [x] Retirada de todos os imóveis de uma determinada faixa de preço
 
 ### Consultas por Localização
 - [x] Retorno de todos os imóveis, dado um CEP (e uma latitude, e uma longitude)
@@ -40,16 +40,16 @@ Cada registro contém os seguintes campos separados por ponto e vírgula (;):
 
 ### Consultas por Tipo e Filtros Compostos
 - [x] Retorno de todos os imóveis dado um tipo
-- [ ] Retirada de todos os imóveis dado um tipo (e um CEP, e um nome de rua, e uma latitude e uma longitude, e um bairro)
-- [ ] Retorno ou retirada de imóveis de uma dada metragem
+- [x] Retirada de todos os imóveis dado um tipo (e um CEP, e um nome de rua, e uma latitude e uma longitude, e um bairro)
+- [x] Retorno ou retirada de imóveis de uma dada metragem
 
 ### Consultas por Descrição
-- [ ] Dada a descrição, obter informações a mais do imóvel
-- [ ] Retorno de informações adicionais dada a descrição (vaga, salão de festas, valor do condomínio, entre outras informações que seu grupo considerar relevante)
+- [x] Dada a descrição, obter informações a mais do imóvel
+- [x] Retorno de informações adicionais dada a descrição (vaga, salão de festas, valor do condomínio, entre outras informações que seu grupo considerar relevante)
 
 ### Operações de Modificação
-- [ ] Inserção de imóveis
-- [ ] Alteração de ALGUMAS informações adicionais, a saber: preço total, preço por metro quadrado e descrição
+- [x] Inserção de imóveis
+- [x] Alteração de ALGUMAS informações adicionais, a saber: preço total, preço por metro quadrado e descrição
 
 ## 🔍 Restrições de Implementação
 
