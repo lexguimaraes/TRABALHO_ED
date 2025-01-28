@@ -441,6 +441,6 @@ void abrir_google_maps(TARVBP* a, int t, unsigned long int id){
     TARVBP* aux = TARVBP_busca(a,id,t);
     char* latitude = substituir_virgula_por_ponto(aux->reg[0]->latitude);
     char* longitude = substituir_virgula_por_ponto(aux->reg[0]->longitude);
-
+    TARVBP_libera(aux,t);
     printf("https://www.google.com/maps/@%s,%s,15z", latitude, longitude);
 }

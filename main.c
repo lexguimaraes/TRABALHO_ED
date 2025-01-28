@@ -45,13 +45,13 @@ int main(void) {  //CRISTO REDENTOR, COPACABANA PALACE, MARACANA, FLORESTA DA TI
             switch(b){
                 case 1:
                     imovel = imoveis_maior_preco(a,t,1);
-                    imprime_imovel(imovel->imovel);
-                    free(imovel);
+                    TLSETIM_imprime(imovel);
+                    TLSETIM_libera(imovel);
                     break;
                 case 2:
                     imovel = imoveis_menor_preco(a,t,1);
-                    imprime_imovel(imovel->imovel);
-                    free(imovel);
+                    TLSETIM_imprime(imovel);
+                    TLSETIM_libera(imovel);
                     break;
                 default:
                     break;
@@ -68,13 +68,13 @@ int main(void) {  //CRISTO REDENTOR, COPACABANA PALACE, MARACANA, FLORESTA DA TI
             switch(b){
                 case 1:
                     imovel = imoveis_maior_preco(a,t,0);
-                    imprime_imovel(imovel->imovel);
-                    free(imovel);
+                    TLSETIM_imprime(imovel);
+                    TLSETIM_libera(imovel);
                     break;
                 case 2:
                     imovel = imoveis_menor_preco(a,t,0);
-                    imprime_imovel(imovel->imovel);
-                    free(imovel);
+                    TLSETIM_imprime(imovel);
+                    TLSETIM_libera(imovel);
                     break;
                 default:
                     break;
@@ -282,7 +282,7 @@ int main(void) {  //CRISTO REDENTOR, COPACABANA PALACE, MARACANA, FLORESTA DA TI
                 TLSETIM* imoveis = imoveis_metragem(a, t, m);
                 if(!imoveis) printf("\nNao foram encontrados imoveis com a metragem dada!");
                 else {
-                    a = remove_imoveis_metragem(a, t, m);
+                    a = retira_imoveis(a, t, imoveis);
                     printf("\nImoveis removidos com sucesso!");
                 }
             }
@@ -499,7 +499,7 @@ int main(void) {  //CRISTO REDENTOR, COPACABANA PALACE, MARACANA, FLORESTA DA TI
                 TLSETIM* imoveis = imoveis_faixa_de_preco(a, t, lim_inf, lim_sup);
                 if(!imoveis) printf("\nNao foram encontrados imoveis com a faixa de preco dada!");
                 else {
-                    a = remove_imoveis_faixa_de_preco(a, t, lim_inf, lim_sup);
+                    a = retira_imoveis(a,t,imoveis);
                     printf("\nImoveis removidos com sucesso!");
                 }
             }

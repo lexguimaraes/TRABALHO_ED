@@ -287,8 +287,7 @@ TARVBP* TARVBP_busca(TARVBP* a, unsigned long int id, int t){
 int TARVBP_tem_id(TARVBP *a, unsigned long int id, int t){
     TARVBP* x = TARVBP_busca(a, id, t);
     if(x){
-        if(x!=a)
-            TARVBP_libera(x,t);
+        TARVBP_libera(x,t);
         return 1;
     }
     return 0;

@@ -1,7 +1,7 @@
 #include "TIM.h"
 
 float strParaFloat(char* str) {
-    for (char* p = str; *p != '\0'; ++p) { //14FLOAT TEM QUE TER A VIRGULA NO ATOF
+    for (char* p = str; *p != '\0'; ++p) { //FLOAT TEM QUE TER A VIRGULA NO ATOF
         if (*p == ',') *p = '.';
     }
 
