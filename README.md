@@ -57,9 +57,3 @@ Cada registro contém os seguintes campos separados por ponto e vírgula (;):
 - Apenas as informações necessárias para a operação atual devem ser mantidas em memória principal
 - Durante operações como inserção, apenas os arquivos no caminho da raiz até a folha podem estar em memória
 
-## 📅 Informações do Projeto
-
-### Prazos
-- **Entrega:** 22/01 às 23:59h
-- **Apresentações:** 22, 23 e 24 de janeiro
-- **Email para envio:** rosseti@ic.uff.br
